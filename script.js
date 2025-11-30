@@ -78,6 +78,7 @@ const numberChecker = function (userGuessingValue) {
       document.querySelector('.high-score').textContent = highScore;
     }
     document.querySelector('body').style.backgroundColor = 'green';
+    document.querySelector('.number').textContent = secretNumber;
     return displayMessage('🏆 You Win! ');
   }
 };
@@ -112,6 +113,8 @@ document.querySelector('.again-same-range').addEventListener('click', () => {
   guessInputValue();
   resetGameBackgroundColor();
   // console.log(`new secret number${secretNumber}`);
+    document.querySelector('.number').textContent = '?';
+
 });
 
 document.querySelector('.again-new-range').addEventListener('click', () => {
@@ -122,5 +125,7 @@ document.querySelector('.again-new-range').addEventListener('click', () => {
   guessInputValue();
   highScore = 0;
   document.querySelector('.high-score').textContent = '0';
+  document.querySelector('.number').textContent = '?';
+
   resetGameBackgroundColor();
 });
